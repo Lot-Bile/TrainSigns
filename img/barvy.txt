@@ -1,0 +1,8 @@
+
+#00BECE --- modrá barev arriva
+tuto používám nejčastěji
+
+#E8A806 --- regiojet žlutá
+#101318 --- leo express černá
+#DA7913 --- barva leo express text
+
