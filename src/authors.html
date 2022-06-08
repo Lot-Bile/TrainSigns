@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Železniční návěsti</title>
+    <link rel="stylesheet" href="foundation/background-css.css">
+    <link rel = "icon" type = "image/png" href = "../img/navesti/samostatne_predvesti/pvystraha.gif">
+</head>
+<body>
+    <nav class="nav-main">
+        <div class="btn-toggle-nav" onclick="toggleNav();"></div>
+        <ul>
+            <li><div class="menu-text-one" onclick="toggleNav();">Menu |</div></li>
+            <li><a href="authors.html" class="menu-text-two">Autoři</a></li>
+            <li><span class="main-text">Železniční návěsti</span></li>
+        </ul>
+    </nav>
+
+    <aside class="nav-sidebar">
+        <ul>
+            <li><span>odkazy</span></li>
+            <li><a href="#">hlavní stránka</a></li>
+            <li><a href="#">testy</a></li>
+            <li><a href="#">seznam návěstí</a></li>
+            <li><a href="background.html">...</a></li>
+            <li><a href="authors.html">autoři</a></li>
+        </ul>
+    </aside>
+
+    <!-- Odsud začíná kód pro tuto stránku -->
+    <table class="author-main">
+        <tr>
+            <th class="author-side">Jméno</th>
+            <th class="author-side">Pozice</th>
+            <th class="author-side">Třída</th>
+            <th class="author-side">Instagram</th>
+            <th class="author-side">Facebook</th>
+            <th class="author-side">Discord</th>
+        </tr>
+        <tr>
+            <th class="author-side">Pavel Kovář</th>
+            <th class="author-side">GRAF: grafická povaha stránky, výuková část</th>
+            <th class="author-side">V3B</th>
+            <th class="author-side" id="inst_logo" onclick="inst_redirect();"></th>
+            <th class="author-side" id="facebook_logo" onclick="face_redirect();"></th>
+            <th class="author-side">SonnyMax#6131</th>
+        </tr>
+        <tr>
+            <th class="author-side">Jan Králík</th>
+            <th class="author-side">PROG: interaktivní část webu, testy návěstidel</th>
+            <th class="author-side">V3B</th>
+            <th class="author-side" id="inst_logo" onclick="inst_redirect();"></th>
+            <th class="author-side" id="facebook_logo" onclick="face_redirect();"></th>
+            <th class="author-side">Anvii#6778</th>
+        </tr>
+    </table>
+    <style>
+        .author-side {
+            width: 200px;
+            height: 150px;
+        }
+        .author-main {
+            top: 150px;
+            left: 425px;
+            /*background-image: url("../img/autori/table_background.gif");
+            background-repeat: no-repeat;*/
+            background-color: white;
+            height: 30%;
+            width: 60%;
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+            text-align: center;
+            font-family: arial;
+            font-weight: normal;
+            text-decoration: none;
+            color: rgb(39, 38, 38);
+            font-family: arial;
+            font-size: 20px;
+            
+        }
+        #inst_logo {
+            background-image: url("../img/autori/instagram_logo.png");
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position: center;
+            cursor: pointer;
+        }
+        #facebook_logo {
+            background-image: url("../img/autori/facebook_logo.png");
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position: center;
+            cursor: pointer;
+        }
+        table, tr, th {
+            border: 5px solid;
+            border-color: #00BECE;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0px;
+        }
+    </style>
+    <script>
+        function inst_redirect(){
+            window.location.replace("http://stackoverflow.com");
+        }
+        function face_redirect(){
+            window.location.replace("http://stackoverflow.com");
+        }
+    </script>
+    <!-- Zde končí kód pro tuto stránku -->
+
+</body>
+<script type="text/javascript" src="foundation/background-script.js"></script>
+</html>
