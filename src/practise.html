@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html lang="cs" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Procvičování návěstidel</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="foundation/background-css.css">
+    <link rel = "icon" type = "image/png" href = "../img/navesti/samostatne_predvesti/pvystraha.gif">
+</head>
     <body>
-        
-
+        <nav class="nav-main">
+            <div class="btn-toggle-nav" onclick="toggleNav();"></div>
+            <ul>
+                <li><div class="menu-text-one" onclick="toggleNav();">Menu |</div></li>
+                <li><a href="authors.html" class="menu-text-two">Autoři</a></li>
+                <li><span class="main-text">Železniční návěsti</span></li>
+            </ul>
+        </nav>
+    
+        <aside class="nav-sidebar">
+            <ul>
+                <li><span>odkazy</span></li>
+                <li><a href="#">hlavní stránka</a></li>
+                <li><a href="#">testy</a></li>
+                <li><a href="practise.html">seznam návěstí</a></li>
+                <li><a href="background.html">...</a></li>
+                <li><a href="authors.html">autoři</a></li>
+            </ul>
+        </aside>
+    
         <button onclick="location.href='./background.html'" type="button">main</button>
         <center>
         <p>Návěsti pro elektrický provoz</p>
@@ -233,6 +253,8 @@
         </table>
     </center>
     </body>
+
+    <script type="text/javascript" src="foundation/background-script.js"></script>
 
     <style>
         table, tr, td {
