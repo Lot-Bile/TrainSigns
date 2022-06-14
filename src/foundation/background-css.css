@@ -2,6 +2,7 @@ body {
     background-color: #f1f1f1;
     background-image: url("../../img/background/silueta.png");
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .nav-main {
     left: 0;
