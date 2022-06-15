@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Železniční návěsti</title>
+    <link rel="stylesheet" href="foundation/background-css.css">
+    <link rel = "icon" type = "image/png" href = "../img/navesti/samostatne_predvesti/pvystraha.gif">
+</head>
+<body>
+    <nav class="nav-main">
+        <div class="btn-toggle-nav" onclick="toggleNav();"></div>
+        <ul>
+            <li><div class="menu-text-one" onclick="toggleNav();">Menu |</div></li>
+            <li><a href="authors.html" class="menu-text-two">Autoři</a></li>
+            <li><span class="main-text">Železniční návěsti</span></li>
+            
+        </ul>
+    </nav>
+
+    <aside class="nav-sidebar">
+        <ul>
+            <li><span>odkazy</span></li>
+            <li><a href="index.html">hlavní stránka</a></li>
+            <li><a href="tests.html">testy</a></li>
+            <li><a href="practise.html">seznam návěstí</a></li>
+            <li><a href="background.html">...</a></li>
+            <li><a href="authors.html">autoři</a></li>
+        </ul>
+    </aside>
+
+    <!-- Odsud začíná kód pro tuto stránku -->
+    <div class="index-header"><div class="index-header-text">Stránka o železničních návěstí pro širokou veřejnost</div></div>
+
+    <div class="index-text-area">
+        <div class="index-left">
+            <div class="index-left-text">
+                <div id="l-header">Úvodní proslov</div>
+                <div id="l-text">
+                    • Vítáme všechny na naší společné týmové práci - webové stránky o železničních návěstí
+                    <br>• Stránka je udělána srozumitelně pro širokou veřejnost, tak doufáme, že se něco naučíte!
+                    <br>• Náš tým je složen ze dvou lidí (zaměřením programátorů) z V3B - Jan Králík, Pavel Kovář
+                    <br>• Naším garantem je mgr. Petr Přikryl
+                    <br>• Závěrem doufáme, že se Vám bude naše práce líbit!
+                </div>
+            </div>
+        </div>
+        <div class="index-right">
+            <div class="index-right-text">
+                <div id="p-header">Naše zadání a téma</div>
+                <div id="p-text">
+                    • Webová stránka zjednodušující porozumnění železničních návěstí používaných na síti SŽ širší veřejnosti.
+                    <br>• Stránka je zaměřena především na hlavní návěstidla
+                    <br>• Jsou zde vysvětleny a pojmenovány jednotlivý návěsti
+                    <br>• Stránka obsahuje návěsti zobrazitelné (stůj, posun, ...)
+                    <br>• Vytvořili jsme stránku s testem na návěsti
+                    <br>• Máme 2 pozice - programátora a grafika
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .index-text-area {
+            display: flex;
+            margin-top: 20px;
+            margin-left: 175px;
+            height: 650px;
+            width: 85%;
+            overflow: hidden;
+        }
+        .index-header {
+            margin-top: 100px;
+            margin-left: 175px;
+            height: 85px;
+            width: 85%;
+            display: table; 
+            border-radius: 18px;
+            border-color: #111;
+            border: 2px solid #111;
+            background-color: white;
+            background-image: url("../img/index/header.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .index-header-text {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #101318;
+            font-family: arial;
+            font-size: 20px;  
+            font-weight: bold;  
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+        }
+        .index-left {
+            margin-left: 5px;
+            width: 50%;
+            float:left;
+            border: 2px solid #000000;
+            background-color: white;
+        }
+        .index-right {
+            width: 50%;
+            margin-left: 50px;
+            float: right;
+            background-color: rgb(0, 0, 0);
+            border: 2px solid #000000;
+        }
+        .index-left-text {
+            height: 100%;
+            width: 100%;
+            background-image: url("../img/index/text-image.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .index-right-text {
+            height: 100%;
+            width: 100%;
+            background-color: #00BECE;
+            background-image: url("../img/index/text-image.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #p-header {
+            color: #111;
+            font-family: arial;
+            font-size: 30px;  
+            font-weight: bold;  
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            background-color: #00BECE;
+
+        }
+        #p-text {
+            color: #111;
+            font-family:sans-serif;
+            font-size: 1.55vw;  
+            font-weight: normal;  
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        #l-header {
+            color: #111;
+            font-family: arial;
+            font-size: 30px;  
+            font-weight: bold;  
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            background-color: #00BECE;
+        }
+        #l-text {
+            color: #111;
+            font-family:sans-serif;
+            font-size: 1.55vw;  
+            font-weight: normal;  
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    </style>
+    <!-- Zde končí kód pro tuto stránku -->
+
+</body>
+<script type="text/javascript" src="foundation/background-script.js"></script>
+</html>
