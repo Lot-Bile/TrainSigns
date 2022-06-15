@@ -18,6 +18,7 @@ body {
     box-shadow: 0 0 15px 0 #d8d8d8;
     border-bottom: 10px;
     margin: 0 auto;
+    border-bottom: 5px solid black;
 }
 .btn-toggle-nav {
     width: 60px;
