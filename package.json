@@ -1,0 +1,22 @@
+{
+  "name": "trainsigns",
+  "version": "1.0.0",
+  "description": "<img src=\"./img/assignment.png\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lot-Bile/TrainSigns.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lot-Bile/TrainSigns/issues"
+  },
+  "homepage": "https://github.com/Lot-Bile/TrainSigns#readme",
+  "dependencies": {
+    "mongoose": "^6.3.8"
+  }
+}
