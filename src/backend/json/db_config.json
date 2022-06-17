@@ -1,0 +1,3 @@
+{
+    "mongo_host": "mongodb://localhost/signals"
+}

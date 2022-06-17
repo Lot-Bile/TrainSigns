@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Železniční návěsti</title>
+        <link rel="stylesheet" href="foundation/background-css.css">
+        <link rel = "icon" type = "image/png" href = "../img/navesti/samostatne_predvesti/pvystraha.gif">
+    </head>
+
+    <body>
+        <nav class="nav-main">
+            <div class="btn-toggle-nav" onclick="toggleNav();"></div>
+            <ul>
+                <li><div class="menu-text-one" onclick="toggleNav();">Menu |</div></li>
+                <li><a href="authors.html" class="menu-text-two">Autoři</a></li>
+                <li><span class="main-text">Železniční návěsti</span></li>
+            </ul>
+        </nav>
+
+        <aside class="nav-sidebar">
+            <ul>
+                <li><span>odkazy</span></li>
+                <li><a href="index.html">hlavní stránka</a></li>
+                <li><a href="tests.html">testy</a></li>
+                <li><a href="practise.html">seznam návěstí</a></li>
+                <li><a href="search.html">vyhledávání návěstí</a></li>
+                <li><a href="background.html">...</a></li>
+                <li><a href="authors.html">autoři</a></li>
+            </ul>
+        </aside>
+
+        <div>
+            <form submit="./backend/search.js">
+                <table>
+                    <th>Vyhledávání hlavních návěstidel</th>
+                    <tr>
+                        <td>Z horních 3:</td>
+                        <td>
+                            <select required id="topThreeLights">
+                                <optgroup label="Žlutá"> 
+                                    <option value="y_on">Svítí</option>
+                                    <option value="y_slow">Bliká pomalu</option>
+                                    <option value="y_fast">Bliká rychle</option>
+                                </optgroup>
+
+                                <optgroup label="Zelená">
+                                    <option value="g_on">Svítí</option>
+                                    <option value="g_slow">Bliká pomalu</option>
+                                    <option value="g_fast">Bliká rychle</option>
+                                </optgroup>
+
+                                <optgroup label="Červená">
+                                    <option value="r_on">Svítí</option>
+                                    <option value="r_slow">Bliká pomalu</option>
+                                    <option value="r_fast">Bliká rychle</option>
+                                </optgroup>
+                                <option value="none">Nesvítí nic</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Bílé světlo:</td>
+                        <td>
+                            <select required id="whiteLight">
+                                <option value=true>Svítí</option>
+                                <option value=true>Bliká pomalu</option>
+                                <option value=false>Nesvítí</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Žluté světlo dole:</td>
+                        <td>
+                            <select required id="yellowBottomLight">
+                                <option value=true>Svítí</option>
+                                <option value=false>Nesvítí</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Žlutá čára:</td>
+                        <td>
+                            <select required id="yellowLine">
+                                <option value=true>Svítí</option>
+                                <option value=false>Nesvítí</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Zelená čára:</td>
+                        <td>
+                            <select required id="greenLines">
+                                <option value=true>Svítí horní</option>
+                                <option value=true>Svítí prostřední</option>
+                                <option value=true>Svítí dvě</option>
+                                <option value=false>Nesvítí</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="foundation/background-script.js"></script>
+
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        th {
+            text-align: center;
+            height: 50px;
+        }
+
+        .grid-container {
+            margin-left: 8%;
+            margin-right: 4%;
+            margin-top: 5%;
+            margin-bottom: 1.4%;
+            display: grid;
+            grid: auto / auto auto auto;
+            column-gap: 30px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</html>
