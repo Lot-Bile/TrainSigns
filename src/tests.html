@@ -7,9 +7,10 @@
         <title>Železniční návěsti</title>
         <link rel="stylesheet" href="foundation/background-css.css">
         <link rel = "icon" type = "image/png" href = "../img/navesti/samostatne_predvesti/pvystraha.gif">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
 
-    <body>
+    <body onload="getImgAndAnswer()">
         <nav class="nav-main">
             <div class="btn-toggle-nav" onclick="toggleNav();"></div>
             <ul>
@@ -30,7 +31,93 @@
                 <li><a href="authors.html">autoři</a></li>
             </ul>
         </aside>
+
+        <table>
+            <th colspan="2">Jaké hlavní návěstidlo je na obrázku?</th>
+            <tr>
+                <td id="q_img" colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td height="75px" width="75px">A</td>
+                <td id="ans_A"></td>
+            </tr>
+
+            <tr>
+                <td height="75px" width="75px">B</td>
+                <td id="ans_B"></td>
+            </tr>
+
+            <tr>
+                <td height="75px" width="75px">C</td>
+                <td id="ans_C"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="button" onclick="getImgAndAnswer()" value="Nová otázka">
+                </td>
+            </tr>
+        </table>
+
+        <div class="nevim" id="idk"></div>
     </body>
+
+    <script>
+        function getImgAndAnswer() {
+            let arr = [], letterArr = ["A", "B", "C"];
+            clearup();
+            $(document).ready(function() {
+                $.getJSON('./foundation/signals.json', function(signals) {
+                    for (var i = 0; i < signals.length; i++) arr.push(signals[i]);
+
+                    let shuffled = arr;
+                    shuffled.sort((a, b) => 0.5 - Math.random());
+
+                    var image = new Image();
+                    let randomNum = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+                    image.src = `../img/navesti/hlavni/${shuffled[randomNum - 1].name}.gif`;
+
+                    $(`#q_img`).append(`<img src="${image.src}">`);
+                    $(`#ans_A`).append(shuffled[0].description);
+                    $(`#ans_B`).append(shuffled[1].description);
+                    $(`#ans_C`).append(shuffled[2].description);
+                });
+            });
+        }
+
+        function clearup() {
+            document.getElementById("ans_A").innerHTML = "";
+            document.getElementById("ans_B").innerHTML = "";
+            document.getElementById("ans_C").innerHTML = "";
+            document.getElementById("q_img").innerHTML = "";
+        }
+    </script>
+
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        table {
+            margin-top: 5%;
+            margin-left: 5%;
+            width: 70%;
+        }
+        
+        th {
+            text-align: center;
+            height: 50px;
+        }
+
+        .nevim {
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+    </style>
 
     <script type="text/javascript" src="foundation/background-script.js"></script>
 </html>
