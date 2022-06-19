@@ -67,8 +67,8 @@
                         <td>
                             <select id="whiteLight" required>
                                 <option value="on">Svítí</option>
-                                <option value="off">Nesvítí</option>
                                 <option value="slow">Bliká pomalu</option>
+                                <option value="off">Nesvítí</option>
                             </select>
                         </td>
                     </tr>
@@ -249,9 +249,8 @@
                         signals[i].yellowBot == yellowBot) {
                             display.innerHTML = "";
                             return (
-                            $('#display').append(`${signals[i].name}<br>`),
-                            $('#display').append(`${signals[i].description}<br>`),
-                            $('#display').append(`<img src="${image.src}"><br>`)
+                            $('#display').append(`<img src="${image.src}"><br>`),
+                            $('#display').append(`${signals[i].description}<br>`)
                             )
                         }
 

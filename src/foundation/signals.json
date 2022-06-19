@@ -1,6 +1,6 @@
 [{
   "name": "40ocekavej40",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 40 km/h, která upozorňuje na rychlost 40 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -14,7 +14,7 @@
   "yellowBot": true
 },{
   "name": "40ocekavej60",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 40 km/h, která upozorňuje na rychlost 60 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -28,7 +28,7 @@
   "yellowBot": true
 },{
   "name": "40ocekavej80",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 40 km/h, která upozorňuje na rychlost 80 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -42,7 +42,7 @@
   "yellowBot": true
 },{
   "name": "40ocekavej100",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 40 km/h, která upozorňuje na rychlost 100 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -56,7 +56,7 @@
   "yellowBot": true
 },{
   "name": "40volno",
-  "description": "",
+  "description": "Rychlost 40 km/h a volno.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -70,7 +70,7 @@
   "yellowBot": true
 },{
   "name": "40vystraha",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 40 km/h, která upozorňuje na blížící se návěst Stůj hlavního návěstidla.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -84,7 +84,7 @@
   "yellowBot": true
 },{
   "name": "60ocekavej40",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 60 km/h, která upozorňuje na rychlost 40 km/h (30 km/h) od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -98,7 +98,7 @@
   "yellowBot": true
 },{
   "name": "60ocekavej60",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 60 km/h, která upozorňuje na rychlost 60 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -112,7 +112,7 @@
   "yellowBot": true
 },{
   "name": "60ocekavej80",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 60 km/h, která upozorňuje na rychlost 80 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -126,7 +126,7 @@
   "yellowBot": true
 },{
   "name": "60ocekavej100",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 60 km/h, která upozorňuje na rychlost 100 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -140,7 +140,7 @@
   "yellowBot": true
 },{
   "name": "60volno",
-  "description": "",
+  "description": "Rychlost 60 km/h a volno.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -154,7 +154,7 @@
   "yellowBot": true
 },{
   "name": "60vystraha",
-  "description": "",
+  "description": " Rychlost 60 km/h a výstraha",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -168,7 +168,7 @@
   "yellowBot": true
 },{
   "name": "80ocekavej40",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 80 km/h, která upozorňuje na rychlost 40 km/h (30 km/h) od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -182,7 +182,7 @@
   "yellowBot": true
 },{
   "name": "80ocekavej60",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 80 km/h, která upozorňuje na rychlost 60 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -196,7 +196,7 @@
   "yellowBot": true
 },{
   "name": "80ocekavej80",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 80 km/h, která upozorňuje na rychlost 80 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -210,7 +210,7 @@
   "yellowBot": true
 },{
   "name": "80ocekavej100",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 80 km/h, která upozorňuje na rychlost 100 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -224,7 +224,7 @@
   "yellowBot": true
 },{
   "name": "80volno",
-  "description": "",
+  "description": "Rychlost 80 km/h a volno.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -235,10 +235,10 @@
   "greenLineBoth": false,
   "white": false,
   "whiteFlashing": false,
-  "yellowBot": true
+  "yellowBot": false
 },{
   "name": "80vystraha",
-  "description": "",
+  "description": " Rychlost 80 km/h a výstraha",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -252,7 +252,7 @@
   "yellowBot": true
 },{
   "name": "100ocekavej40",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 100 km/h, která upozorňuje na rychlost 40 km/h (30 km/h) od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -266,7 +266,7 @@
   "yellowBot": true
 },{
   "name": "100ocekavej60",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 100 km/h, která upozorňuje na rychlost 60 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -280,7 +280,7 @@
   "yellowBot": true
 },{
   "name": "100ocekavej80",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 100 km/h, která upozorňuje na rychlost 80 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -294,7 +294,7 @@
   "yellowBot": true
 },{
   "name": "100ocekavej100",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku nejvýše 100 km/h, která upozorňuje na rychlost 100 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -308,7 +308,7 @@
   "yellowBot": true
 },{
   "name": "100vystraha",
-  "description": "",
+  "description": " Rychlost 100 km/h a výstraha",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -322,7 +322,7 @@
   "yellowBot": true
 },{
   "name": "ocekavej40",
-  "description": "",
+  "description": "Návěst samostatné předvěsti, která upozorňuje na rychlost 40 km/h (30 km/h) od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -336,10 +336,10 @@
   "yellowBot": false
 },{
   "name": "ocekavej60",
-  "description": "",
+  "description": "Návěst samostatné předvěsti, která upozorňuje na rychlost 60 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
-  "flashing": false,
-  "flashingFast": true,
+  "flashing": true,
+  "flashingFast": false,
   "lightColor": "yellow",
   "yellowLine": false,
   "greenLineUp": false,
@@ -350,7 +350,7 @@
   "yellowBot": false
 },{
   "name": "ocekavej80",
-  "description": "",
+  "description": "Návěst samostatné předvěsti, která upozorňuje na rychlost 80 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": true,
   "flashingFast": false,
@@ -364,7 +364,7 @@
   "yellowBot": false
 },{
   "name": "ocekavej100",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku maximální traťovou rychlostí, která upozorňuje na rychlost 100 km/h od nejbližšího hlavního návěstidla.",
   "static": false,
   "flashing": false,
   "flashingFast": true,
@@ -378,7 +378,7 @@
   "yellowBot": false
 },{
   "name": "posundovolen",
-  "description": "",
+  "description": "Dovoluje posun.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -392,7 +392,7 @@
   "yellowBot": false
 },{
   "name": "privolavaci",
-  "description": "",
+  "description": "Může být na návěstidle společně s návěstí Stůj. Přerušované bílé světlo může být pod nebo nad červeným světlem. Je-li hlavní návěstidlo trpasličí nebo umístěné na stavbě dráhy, mohou být tato světla i vedle sebe. ",
   "static": false,
   "flashing": false,
   "flashingFast": false,
@@ -406,7 +406,7 @@
   "yellowBot": false
 },{
   "name": "stuj",
-  "description": "",
+  "description": "Návěst hlavního návěstidla zakazující jízdu vlaku.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -420,7 +420,7 @@
   "yellowBot": false
 },{
   "name": "stujprivolavaci",
-  "description": "",
+  "description": "Dovoluje jízdu vlaku kolem hlavního návěstidla s návěstí Stůj, na kterém nelze dát jinou návěsti dovolující vlaku. Dovoluje jízdu vlaku kolem zhaslého hlavního návěstidla.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -434,7 +434,7 @@
   "yellowBot": false
 },{
   "name": "volno",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku na širou trať nebo v případě vjezdového nebo cestového návěstidla může upozorňovat na jednosvětlovou návěst hlavního návěstidla. Dolní část návěstidla nijak nesvítí, což umožňuje rovněž využít maximální traťové rychlosti.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
@@ -448,7 +448,7 @@
   "yellowBot": false
 },{
   "name": "vystraha",
-  "description": "",
+  "description": "Návěst hlavního návěstidla dovolující jízdu vlaku maximální traťovou rychlostí, která upozorňuje na blížící se návěst Stůj hlavního návěstidla.",
   "static": true,
   "flashing": false,
   "flashingFast": false,
