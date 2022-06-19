@@ -31,86 +31,186 @@
     </aside>
 
     <!-- Odsud začíná kód pro tuto stránku -->
-    <table class="author-main">
-        <tr>
-            <th class="author-side">Jméno</th>
-            <th class="author-side">Pozice</th>
-            <th class="author-side">Třída</th>
-            <th class="author-side">Instagram</th>
-            <th class="author-side">Facebook</th>
-            <th class="author-side">Discord</th>
-        </tr>
-        <tr>
-            <th class="author-side">Pavel Kovář</th>
-            <th class="author-side">GRAF: grafická povaha stránky, výuková část</th>
-            <th class="author-side">V3B</th>
-            <th class="author-side" id="inst_logo" onclick="inst_redirect();"></th>
-            <th class="author-side" id="facebook_logo" onclick="face_redirect();"></th>
-            <th class="author-side">SonnyMax#6131</th>
-        </tr>
-        <tr>
-            <th class="author-side">Jan Králík</th>
-            <th class="author-side">PROG: interaktivní část webu, testy návěstidel</th>
-            <th class="author-side">V3B</th>
-            <th class="author-side" id="inst_logo" onclick="inst_redirect();"></th>
-            <th class="author-side" id="facebook_logo" onclick="face_redirect();"></th>
-            <th class="author-side">Anvii#6778</th>
-        </tr>
-    </table>
+    <div class="header"><div class="header-text">autoři projektu</div></div>
+    <div class="container1">
+        <div class="author-icon1">
+            <div class="author-icon-bubble1"></div>
+        </div>
+        <div class="author-text1">
+            <div class="inst" onclick="redirect_inst();"></div>
+            <div class="face" onclick="reditect_face();"></div>
+            <div class="text-area1">jan králík</div>
+            <div class="text-area12">V3B</div>
+            <div class="text-area13">pozice PROG</div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="author-icon2">
+            <div class="author-icon-bubble2"></div>
+        </div>
+        <div class="author-text2">
+            <div class="inst" onclick="redirect_inst();"></div>
+            <div class="face" onclick="reditect_face();"></div>
+            <div class="text-area2">pavel kovář</div>
+            <div class="text-area12">V3B</div>
+            <div class="text-area13">pozice GRAF</div>
+        </div>
+    </div>
     <style>
-        .author-side {
-            width: 200px;
-            height: 150px;
-        }
-        .author-main {
-            top: 150px;
-            left: 425px;
-            /*background-image: url("../img/autori/table_background.gif");
-            background-repeat: no-repeat;*/
+        .header {
+            margin-top: 100px;
+            margin-left: 175px;
+            height: 85px;
+            width: 85%;
+            display: table; 
+            border-radius: 18px;
+            border-color: #111;
+            border: 2px solid #111;
             background-color: white;
-            height: 30%;
-            width: 60%;
-            display: inline-block;
-            position: relative;
-            vertical-align: top;
-            text-align: center;
-            font-family: arial;
-            font-weight: normal;
+            background-image: url("../img/index/header.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header-text {
+            text-transform: uppercase;
             text-decoration: none;
-            color: rgb(39, 38, 38);
+            color: #101318;
             font-family: arial;
-            font-size: 20px;
-            
+            font-size: 20px;  
+            font-weight: bold;  
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
         }
-        #inst_logo {
+
+        .container1, .container2 {
+            display: flex;
+            overflow: hidden;
+            height: 200;
+            width: 100%;
+        }
+        .author-icon1 {
+            background-color: #805444;
+            border: 2px solid #55372c;
+        }
+        .author-icon2 {
+            background-color: #080404;
+            border: 2px solid #000000
+        }
+        .inst {
             background-image: url("../img/autori/instagram_logo.png");
-            background-repeat: no-repeat;
-            background-size: 60%;
             background-position: center;
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            float: left;
+            display: flex;
             cursor: pointer;
+            margin-top: 75px;
+            margin-left: 20px;
+            padding-right: 50px;
         }
-        #facebook_logo {
+        .face {
             background-image: url("../img/autori/facebook_logo.png");
-            background-repeat: no-repeat;
-            background-size: 60%;
             background-position: center;
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            float: left;
+            display: flex;
             cursor: pointer;
+            margin-top: 75px;
+            margin-left: 20px;
+            padding-right: 50px;
         }
-        table, tr, th {
-            border: 5px solid;
-            border-color: #00BECE;
+        .text-area1, .text-area2 {
+            color: white;
+            margin-left: 30px;
+            padding-right: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: arial;
+            text-decoration: none;
+            text-transform: uppercase;
+            width: 800px;
+            padding-left: -20px;
+            margin-top: 80px;
         }
-        table {
-            border-collapse: separate;
-            border-spacing: 0px;
+        .text-area12, .text-area13 {
+            margin-right: 0%;
+            color: white;
+            margin-left: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: arial;
+            text-decoration: none;
+            text-transform: uppercase;
         }
+        .text-area12{
+            margin-top: 90px;
+        }
+        .text-area13{
+            margin-top: 80px;
+        }
+        .author-icon1, .author-icon2 {
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            margin-left: 25%;
+            float: left;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5%;
+        }
+        .author-text1, .author-text2 {
+            float: left;
+            width: 800px;
+            height: 200px;
+            margin-top: 50px;
+            margin-left: 100px;
+            display: flex;
+            overflow: hidden;
+        }
+        .author-text1 {
+            background-color: #805444;
+            border: 2px solid #55372c;
+            border-radius: 2%;
+        }
+
+        .author-text2 {
+            background-color: #080404;
+            border: 2px solid #000000;
+            border-radius: 2%;
+        }
+        .author-icon-bubble1,.author-icon-bubble2 {
+            width: 8vw;
+            height: 8vw;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        .author-icon-bubble1 {
+            background-image: url("../img/autori/Anvii.jpg");
+            background-repeat: no-repeat;
+            background-size: 175%;
+            background-position: center;
+            border: 10px solid #6e4739;
+        }
+        .author-icon-bubble2 {
+            background-image: url("../img/autori/SonnyMax.jpg");
+            background-repeat: no-repeat;
+            background-size: 175%;
+            background-position: center;
+            border: 10px solid #000000;
+        }
+
+
     </style>
     <script>
-        function inst_redirect(){
-            window.location.replace("http://stackoverflow.com");
-        }
-        function face_redirect(){
-            window.location.replace("http://stackoverflow.com");
+        function redirect_inst(){
+            alert("Test");
         }
     </script>
     <!-- Zde končí kód pro tuto stránku -->
