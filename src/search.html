@@ -7,6 +7,7 @@
         <title>Železniční návěsti</title>
         <link rel="stylesheet" href="foundation/background-css.css">
         <link rel = "icon" type = "image/png" href = "../img/navesti/samostatne_predvesti/pvystraha.gif">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -32,13 +33,13 @@
         </aside>
 
         <div>
-            <form submit="./backend/search.js">
+            <form>
                 <table>
                     <th>Vyhledávání hlavních návěstidel</th>
                     <tr>
                         <td>Z horních 3:</td>
                         <td>
-                            <select required id="topThreeLights">
+                            <select id="topThreeLights" required>
                                 <optgroup label="Žlutá"> 
                                     <option value="y_on">Svítí</option>
                                     <option value="y_slow">Bliká pomalu</option>
@@ -56,7 +57,7 @@
                                     <option value="r_slow">Bliká pomalu</option>
                                     <option value="r_fast">Bliká rychle</option>
                                 </optgroup>
-                                <option value="none">Nesvítí nic</option>
+                                <option value="a_off">Nesvítí nic</option>
                             </select>
                         </td>
                     </tr>
@@ -64,10 +65,10 @@
                     <tr>
                         <td>Bílé světlo:</td>
                         <td>
-                            <select required id="whiteLight">
-                                <option value=true>Svítí</option>
-                                <option value=true>Bliká pomalu</option>
-                                <option value=false>Nesvítí</option>
+                            <select id="whiteLight" required>
+                                <option value="on">Svítí</option>
+                                <option value="off">Nesvítí</option>
+                                <option value="slow">Bliká pomalu</option>
                             </select>
                         </td>
                     </tr>
@@ -75,9 +76,9 @@
                     <tr>
                         <td>Žluté světlo dole:</td>
                         <td>
-                            <select required id="yellowBottomLight">
-                                <option value=true>Svítí</option>
-                                <option value=false>Nesvítí</option>
+                            <select id="yellowBottomLight" required>
+                                <option value="on">Svítí</option>
+                                <option value="off">Nesvítí</option>
                             </select>
                         </td>
                     </tr>
@@ -85,9 +86,9 @@
                     <tr>
                         <td>Žlutá čára:</td>
                         <td>
-                            <select required id="yellowLine">
-                                <option value=true>Svítí</option>
-                                <option value=false>Nesvítí</option>
+                            <select id="yellowLine" required>
+                                <option value="on">Svítí</option>
+                                <option value="off">Nesvítí</option>
                             </select>
                         </td>
                     </tr>
@@ -95,17 +96,17 @@
                     <tr>
                         <td>Zelená čára:</td>
                         <td>
-                            <select required id="greenLines">
-                                <option value=true>Svítí horní</option>
-                                <option value=true>Svítí prostřední</option>
-                                <option value=true>Svítí dvě</option>
-                                <option value=false>Nesvítí</option>
+                            <select id="greenLines" required>
+                                <option value="top_on">Svítí horní</option>
+                                <option value="mid_on">Svítí prostřední</option>
+                                <option value="both_on">Svítí dvě</option>
+                                <option value="off">Nesvítí</option>
                             </select>
                         </td>
                     </tr>
 
                     <tr>
-                        <td><input type="submit" value="Submit"></td>
+                        <td><input type="button" value="Submit" onclick="searchSignal()"></td>
                     </tr>
                 </table>
             </form>
@@ -114,11 +115,167 @@
 
     <script type="text/javascript" src="foundation/background-script.js"></script>
 
+    <script type="text/javascript" language="javascript">
+
+        function searchSignal() {
+            
+
+            let topThree = document.getElementById("topThreeLights").value;
+            let whiteLight = document.getElementById("whiteLight").value;
+            let yellowBottomLight = document.getElementById("yellowBottomLight").value;
+            let yellowLines = document.getElementById("yellowLine").value;
+            let greenLines = document.getElementById("greenLines").value;
+
+            let static, flashing, flashingFast, lightColor, yellowLine, greenLineUp, greenLineMid, greenLineBoth, white, whiteFlashing, yellowBot;
+
+            switch (topThree.slice(2)) {
+                case "on":
+                    static = true;
+                    flashing = false;
+                    flashingFast = false;
+
+                    if (topThree.slice(0, 1) == "y") lightColor = "yellow";
+                    else if (topThree.slice(0, 1) == "g") lightColor = "green";
+                    else if (topThree.slice(0, 1) == "r") lightColor = "red";
+                    break;
+                
+                case "slow":
+                    static = false;
+                    flashing = true;
+                    flashingFast = false;
+
+                    if (topThree.slice(0, 1) == "y") lightColor = "yellow";
+                    else if (topThree.slice(0, 1) == "g") lightColor = "green";
+                    else if (topThree.slice(0, 1) == "r") lightColor = "red";
+                    break;
+
+                case "fast":
+                    static = false;
+                    flashing = false;
+                    flashingFast = true;
+
+                    if (topThree.slice(0, 1) == "y") lightColor = "yellow";
+                    else if (topThree.slice(0, 1) == "g") lightColor = "green";
+                    else if (topThree.slice(0, 1) == "r") lightColor = "red";
+                    break;
+
+                case "off":
+                    static = false;
+                    flashing = false;
+                    flashingFast = false;
+                    lightColor = "off";
+                    break;
+            }
+
+            switch (whiteLight) {
+                case "on":
+                    whiteLight = true;
+                    whiteFlashing = false;
+                    break;
+                
+                case "off":
+                    whiteLight = false;
+                    whiteFlashing = false;
+                    break;
+
+                case "slow":
+                    whiteLight = false;
+                    whiteFlashing = true;
+                    break;
+            }
+
+            switch (yellowBottomLight) {
+                case "on":
+                    yellowBot = true;
+                    break;
+                
+                case "off":
+                    yellowBot = false;
+                    break;
+            }
+
+            switch (yellowLines) {
+                case "on":
+                    yellowLine = true;
+                    break;
+                
+                case "off":
+                    yellowLine = false;
+                    break;
+            }
+
+            switch (greenLines) {
+                case "top_on":
+                    greenLineUp = true;
+                    greenLineMid = false;
+                    greenLineBoth = false;
+                    break;
+                
+                case "mid_on":
+                    greenLineUp = false;
+                    greenLineMid = true;
+                    greenLineBoth = false;
+                    break;
+
+                case "both_on":
+                    greenLineUp = false;
+                    greenLineMid = false;
+                    greenLineBoth = true;
+                    break;
+
+                case "off":
+                    greenLineUp = false;
+                    greenLineMid = false;
+                    greenLineBoth = false;
+                    break;
+            }
+
+            $(document).ready(function() {
+                $.getJSON('./foundation/signals.json', function(signals) {
+                    for (var i = 0; i < signals.length; i++) {
+                        var image = new Image();
+                        image.src = `../img/navesti/hlavni/${signals[i].name}.gif`;
+
+                        if (signals[i].static == static &&
+                        signals[i].flashing == flashing &&
+                        signals[i].flashingFast == flashingFast &&
+                        signals[i].lightColor == lightColor &&
+                        signals[i].yellowLine == yellowLine &&
+                        signals[i].greenLineUp == greenLineUp &&
+                        signals[i].greenLineMid == greenLineMid &&
+                        signals[i].greenLineBoth == greenLineBoth &&
+                        signals[i].white == whiteLight &&
+                        signals[i].whiteFlashing == whiteFlashing &&
+                        signals[i].yellowBot == yellowBot) {
+                            display.innerHTML = "";
+                            return (
+                            $('#display').append(`${signals[i].name}<br>`),
+                            $('#display').append(`${signals[i].description}<br>`),
+                            $('#display').append(`<img src="${image.src}"><br>`)
+                            )
+                        }
+
+                        else if (display.innerHTML == "") {
+                            $('#display').append(`Nenalezeno.`);
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+    
+    <div id="display" class="nevim"></div>
+
     <style>
         table, tr, td {
             border: 1px solid black;
             border-collapse: collapse;
             text-align: center;
+        }
+
+        table {
+            margin-top: 5%;
+            margin-left: 5%;
         }
         
         th {
@@ -142,6 +299,11 @@
             padding: 5px;
             font-size: 18px;
             text-align: center;
+        }
+        
+        .nevim {
+            margin-top: 1%;
+            margin-left:4%;
         }
     </style>
 </html>
