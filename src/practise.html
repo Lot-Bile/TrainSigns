@@ -30,12 +30,13 @@
         </aside>
 
         <!-- Odsud začíná kód pro tuto stránku -->
+        <div class="header"><div class="header-text">Seznam návěstí</div></div>
         <div class="grid-container">
             <table class="grid-item">
                 <th colspan="2">Návěsti pro elektrický provoz</th>
                 <tr height="30px">
-                    <td>návěst</td>
-                    <td>význam</td>
+                    <td id="desc">návěst</td>
+                    <td id="desc">význam</td>
                 </tr>
                 <tr>
                     <td><img src="../img/navesti/elektricky_provoz/vypneteproud.gif"></td>
@@ -93,14 +94,16 @@
                     <td><img src="../img/navesti/elektricky_provoz/konecsnizenevysky.gif"></td>
                     <td>Konec snížené výšky trolejového drátu.</td>
                 </tr>
+                <th colspan="2">
+                </th>
             </table>
 
             <table class="grid-item">
                 <th colspan="3">Návěsti označující místo na trati</th>
                 <tr height="30px">
-                    <td>návěst</td>
-                    <td>označení</td>
-                    <td>význam</td>
+                    <td id="desc">návěst</td>
+                    <td id="desc">označení</td>
+                    <td id="desc">význam</td>
                 </tr>
                 <tr>
                     <td><img src="../img/navesti/misto_na_trati/vzdalupozor1.gif"></td>
@@ -197,14 +200,16 @@
                     <td></td>
                     <td>Místo zastavení.</td>
                 </tr>
+                <th colspan="3">
+                </th>
             </table>
 
             <table class="grid-item">
                 <th colspan="3">Návěsti zvláštního určení</th>
                 <tr height="30px">
-                    <td>návěst</td>
-                    <td>označení</td>
-                    <td>význam</td>
+                    <td id="desc">návěst</td>
+                    <td id="desc">označení</td>
+                    <td id="desc">význam</td>
                 </tr>
                 <tr>
                     <td><img src="../img/navesti/zvlastni_urceni/pluhoff.gif"></td>
@@ -251,6 +256,8 @@
                     <td></td>
                     <td>Očekávejte otevřený přejezd.</td>
                 </tr>
+                <th colspan="3">
+                </th>
             </table>
         </div>
     </body>
@@ -259,20 +266,30 @@
 
     <style>
         table, tr, td {
-            border: 1px solid black;
+            border: 2px solid rgb(34, 30, 30);
             border-collapse: collapse;
             text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
         }
         
         th {
             text-align: center;
             height: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: arial;
+            background-color: rgb(34, 30, 30);
+            color: #00BECE;
+        }
+        tr:hover {
+            background-color: rgba(34, 30, 30, 0.651);
+            color: #ffffff;
         }
 
         .grid-container {
             margin-left: 8%;
             margin-right: 4%;
-            margin-top: 5%;
+            margin-top: 3%;
             margin-bottom: 1.4%;
             display: grid;
             grid: auto / auto auto auto;
@@ -280,11 +297,42 @@
         }
 
         .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(250, 250, 250, 0.897);
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 5px;
             font-size: 18px;
             text-align: center;
         }
+        .header {
+            margin-top: 100px;
+            margin-left: 175px;
+            height: 85px;
+            width: 85%;
+            display: table; 
+            border-radius: 18px;
+            border-color: #111;
+            border: 2px solid #111;
+            background-color: white;
+            background-image: url("../img/index/header.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header-text {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #101318;
+            font-family: arial;
+            font-size: 20px;  
+            font-weight: bold;  
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+        }
+        #desc {
+            text-transform: uppercase;
+            background-color: rgb(150, 149, 149);
+        }
     </style>
+    <!-- Zde končí kód pro tuto stránku -->
+
 </html>
