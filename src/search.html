@@ -30,15 +30,17 @@
                 <li><a href="authors.html">autoři</a></li>
             </ul>
         </aside>
-
-        <div>
+    <!---Zde začíná kód pro tuto stránku-->
+    <div class="header"><div class="header-text">Vyhledávání hlavních návěstí</div></div>
+    <div class="container">
+        <div class="q-table">
             <form>
                 <table>
-                    <th>Vyhledávání hlavních návěstidel</th>
+                    <th colspan="2" id="main-text">Vytvoř hlavní návěstidlo z daných možností</th>
                     <tr>
-                        <td>Z horních 3:</td>
+                        <td id="manual-text">Vyber z horních 3 ukazatelů</td>
                         <td>
-                            <select id="topThreeLights" required>
+                            <select class="choose-button" id="topThreeLights" required>
                                 <optgroup label="Žlutá"> 
                                     <option value="y_on">Svítí</option>
                                     <option value="y_slow">Bliká pomalu</option>
@@ -62,9 +64,9 @@
                     </tr>
 
                     <tr>
-                        <td>Bílé světlo:</td>
+                        <td id="manual-text">Vyber možnost bílého světla</td>
                         <td>
-                            <select id="whiteLight" required>
+                            <select class="choose-button" id="whiteLight" required>
                                 <option value="on">Svítí</option>
                                 <option value="slow">Bliká pomalu</option>
                                 <option value="off">Nesvítí</option>
@@ -73,9 +75,9 @@
                     </tr>
 
                     <tr>
-                        <td>Žluté světlo dole:</td>
+                        <td id="manual-text">Vyber možnost žlutého světla dole</td>
                         <td>
-                            <select id="yellowBottomLight" required>
+                            <select class="choose-button" id="yellowBottomLight" required>
                                 <option value="on">Svítí</option>
                                 <option value="off">Nesvítí</option>
                             </select>
@@ -83,9 +85,9 @@
                     </tr>
 
                     <tr>
-                        <td>Žlutá čára:</td>
+                        <td id="manual-text">Vyber možnost žluté čáry</td>
                         <td>
-                            <select id="yellowLine" required>
+                            <select class="choose-button" id="yellowLine" required>
                                 <option value="on">Svítí</option>
                                 <option value="off">Nesvítí</option>
                             </select>
@@ -93,9 +95,9 @@
                     </tr>
 
                     <tr>
-                        <td>Zelená čára:</td>
+                        <td id="manual-text">Vyber možnost zelené čáry</td>
                         <td>
-                            <select id="greenLines" required>
+                            <select class="choose-button" id="greenLines" required>
                                 <option value="top_on">Svítí horní</option>
                                 <option value="mid_on">Svítí prostřední</option>
                                 <option value="both_on">Svítí dvě</option>
@@ -103,13 +105,13 @@
                             </select>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td><input type="button" value="Submit" onclick="searchSignal()"></td>
-                    </tr>
+                        <td colspan="2"><input  id="submit-button" type="button" value="Zde potvrď výběr" onclick="searchSignal()"></td>
                 </table>
             </form>
         </div>
+
+    </div>
+    <div id="display" class="result"></div>
     </body>
 
     <script type="text/javascript" src="foundation/background-script.js"></script>
@@ -261,28 +263,172 @@
         }
     </script>
     
-    <div id="display" class="nevim"></div>
 
     <style>
+        .header {
+            margin-top: 100px;
+            margin-left: 175px;
+            height: 85px;
+            width: 85%;
+            display: table; 
+            border-radius: 18px;
+            border-color: #111;
+            border: 2px solid #111;
+            background-color: white;
+            background-image: url("../img/index/header.png");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header-text {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #101318;
+            font-family: arial;
+            font-size: 20px;  
+            font-weight: bold;  
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+        }
         table, tr, td {
             border: 1px solid black;
             border-collapse: collapse;
             text-align: center;
+            width: 100%;
+            height: 40px;
         }
 
         table {
             margin-top: 5%;
-            margin-left: 5%;
         }
         
         th {
             text-align: center;
             height: 50px;
         }
+        td {
+            width: 50%;
+        }
 
-        .nevim {
+        .result {
             margin-top: 1%;
             margin-left:4%;
         }
+        .container {
+            height: 400px;
+            width: 47.5%;
+            background-color: white;
+            margin-left: 27.5%;
+            margin-top: 20px;
+        }
+        #submit-button {
+            height: 60px;
+        }
+        #main-text {
+            color: #00BECE;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(34, 30, 30);
+        }
+        #manual-text {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(218, 216, 216);
+        }
+        #manual-text:hover {
+            background-color: rgba(34, 30, 30, 0.651);
+            color: #ffffff;
+        }
+        
+
+        .choose-button {
+            align-items: center;
+            background-color: rgba(240, 240, 240, 0.26);
+            border: 1px solid #DFDFDF;
+            box-sizing: border-box;
+            color: #000000;
+            cursor: pointer;
+            display: flex;
+            font-family: Inter, sans-serif;
+            font-size: 18px;
+            justify-content: center;
+            line-height: 28px;
+            max-width: 100%;
+            padding: 14px 22px;
+            text-decoration: none;
+            transition: all .2s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: 100%;
+        }
+
+        .choose-button:active, .choose-button:hover {
+            outline: 0;
+        }
+
+        .choose-button:hover {
+            background-color: #FFFFFF;
+            border-color: rgba(0, 0, 0, 0.19);
+        }
+
+        @media (min-width: 768px) {
+            .choose-button {
+                font-size: 20px;
+                min-width: 200px;
+                padding: 14px 16px;
+            }
+        }
+        
+        #submit-button {
+            align-items: center;
+            background-color: rgb(34, 30, 30);
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+            box-sizing: border-box;
+            color: #00BECE;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 1.25;
+            margin: 0;
+            min-height: 3rem;
+            padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+            position: relative;
+            text-decoration: none;
+            transition: all 250ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: baseline;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        #submit-button:hover, #submit-button:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+            color: rgb(255, 255, 255);
+        }
+
+        #submit-button:hover {
+            transform: translateY(-1px);
+        }
+            
+        #submit-button:active {
+            background-color: #F0F0F1;
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
+        }
+        
     </style>
+    <!---Zde končí kód pro tuto stránku-->
 </html>
