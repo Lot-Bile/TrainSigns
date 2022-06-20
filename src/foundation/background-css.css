@@ -99,6 +99,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     margin-left: 31vw;
+    color: rgb(34, 30, 30);
 }
 .menu-text-one {
     cursor: pointer;
@@ -109,4 +110,7 @@ body {
     font-family: arial;
     text-decoration: none;
     text-transform: uppercase;
+}
+.menu-text-one:hover, .menu-text-two:hover {
+    font-weight: bold;
 }

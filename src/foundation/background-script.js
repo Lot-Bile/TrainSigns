@@ -8,7 +8,7 @@ let toggleNav = function() {
     let getSidebarTitle = document.querySelector(".nav-sidebar span");
     let getSidebarLinks = document.querySelectorAll(".nav-sidebar a");
 
-    if(toggleNavStatus == false) { // muze byt zkraceno na if (!toggleNavStatus)
+    if(!toggleNavStatus) {
         getSidebarUl.style.visibility = "visible";
         getSidebar.style.width = "272px";
         getSidebarTitle.style.opacity = "0.5";
@@ -20,7 +20,7 @@ let toggleNav = function() {
 
         toggleNavStatus = true;
     }
-    else if(toggleNavStatus == true) { // muze byt zkraceno na else if (toggleNavStatus) nebo jen else, vicemene je to jedno
+    else if(toggleNavStatus) {
         getSidebar.style.width = "50px";
         getSidebarTitle.style.opacity = "0";
 
