@@ -32,35 +32,35 @@
         </aside>
 
         <!-- Odsud začíná kód pro tuto stránku -->
+        <div class="header"><div class="header-text">TEST NA NÁVĚSTI</div></div>
         <table>
-            <th colspan="2">Jaké hlavní návěstidlo je na obrázku?</th>
+            <th colspan="2" id="question-text">Jaké hlavní návěstidlo je na obrázku?</th>
             <tr>
                 <td id="q_img" colspan="2"></td>
             </tr>
 
             <tr>
-                <td height="75px" width="75px">A</td>
+                <td height="75px" width="75px" id="letter">A</td>
                 <td id="ans_A"></td>
             </tr>
 
             <tr>
-                <td height="75px" width="75px">B</td>
+                <td height="75px" width="75px" id="letter">B</td>
                 <td id="ans_B"></td>
             </tr>
 
             <tr>
-                <td height="75px" width="75px">C</td>
+                <td height="75px" width="75px" id="letter">C</td>
                 <td id="ans_C"></td>
             </tr>
 
             <tr>
                 <td colspan="2">
-                    <input type="button" onclick="getImgAndAnswer()" value="Nová otázka">
+                    <input type="button" onclick="getImgAndAnswer()" value="Nová otázka" class="choose-button">
                 </td>
             </tr>
         </table>
 
-        <div class="nevim" id="idk"></div>
     </body>
 
     <script>
@@ -103,9 +103,11 @@
         }
 
         table {
-            margin-top: 5%;
-            margin-left: 5%;
+            margin-top: 2%;
+            margin-left: 17%;
             width: 70%;
+            background-color: white;
+            border: 2px solid #111;
         }
         
         th {
@@ -113,10 +115,92 @@
             height: 50px;
         }
 
-        .nevim {
-            margin-top: 5%;
-            margin-left: 5%;
+        .header {
+            margin-top: 100px;
+            margin-left: 175px;
+            height: 85px;
+            width: 85%;
+            display: table; 
+            border-radius: 18px;
+            border-color: #111;
+            border: 2px solid #111;
+            background-color: white;
+            background-image: url("../img/index/header.png");
+            background-position: center;
+            background-repeat: no-repeat;
         }
+        .header-text {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #101318;
+            font-family: arial;
+            font-size: 20px;  
+            font-weight: bold;  
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+        }
+        #question-text, #letter {
+            background-color:rgb(34, 30, 30);
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #00BECE;
+            font-family: arial;
+        }
+        #q_img {
+            background-color:rgb(218, 216, 216);
+        }
+        #letter {
+            font-weight: bolder;
+        }
+        #ans_A, #ans_B, #ans_C {
+            background-color: rgb(255, 255, 255);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #ans_A:hover, #ans_B:hover, #ans_C:hover {
+            background-color: rgba(34, 30, 30, 0.651);
+            color: #ffffff;
+        }
+        .choose-button {
+            align-items: center;
+            background-color: rgba(240, 240, 240, 0.26);
+            border: 1px solid #DFDFDF;
+            box-sizing: border-box;
+            color: #000000;
+            cursor: pointer;
+            display: flex;
+            font-family: Inter, sans-serif;
+            font-size: 18px;
+            justify-content: center;
+            line-height: 28px;
+            max-width: 100%;
+            padding: 14px 22px;
+            transition: all .2s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: 100%;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .choose-button:active, .choose-button:hover {
+            outline: 0;
+        }
+
+        .choose-button:hover {
+            background-color: #FFFFFF;
+            border-color: rgba(0, 0, 0, 0.19);
+        }
+
+        @media (min-width: 768px) {
+            .choose-button {
+                font-size: 20px;
+                min-width: 200px;
+                padding: 14px 16px;
+            }
+        }
+        
     </style>
 
     <script type="text/javascript" src="foundation/background-script.js"></script>
