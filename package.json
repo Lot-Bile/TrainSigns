@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/Lot-Bile/TrainSigns#readme",
   "dependencies": {
-    "http-server": "^14.1.1",
-    "mongoose": "^6.3.8"
+    "http-server": "^14.1.1"
   }
 }
