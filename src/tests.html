@@ -41,23 +41,22 @@
 
             <tr>
                 <td height="75px" width="75px" id="letter">A</td>
-                <td id="ans_A"></td>
+                <td id="ans_A" onclick="changeBackground(this)"></td>
             </tr>
 
             <tr>
                 <td height="75px" width="75px" id="letter">B</td>
-                <td id="ans_B"></td>
+                <td id="ans_B" onclick="changeBackground(this)"></td>
             </tr>
 
             <tr>
                 <td height="75px" width="75px" id="letter">C</td>
-                <td id="ans_C"></td>
+                <td id="ans_C" onclick="changeBackground(this)"></td>
             </tr>
 
             <tr>
-                <td colspan="2">
-                    <input type="button" onclick="getImgAndAnswer()" value="Nová otázka" class="choose-button">
-                </td>
+                <td><input type="button" onclick="getImgAndAnswer()" value="Nová otázka" class="choose-button"></td>
+                <td><input type="button" onclick="checkAnswer(this)" value="Vyhodnotit otázku" class="choose-button"></td>
             </tr>
         </table>
 
@@ -82,6 +81,8 @@
                     $(`#ans_A`).append(shuffled[0].description);
                     $(`#ans_B`).append(shuffled[1].description);
                     $(`#ans_C`).append(shuffled[2].description);
+
+                    checkAnswer(shuffled[randomNum - 1].description);
                 });
             });
         }
@@ -91,6 +92,35 @@
             document.getElementById("ans_B").innerHTML = "";
             document.getElementById("ans_C").innerHTML = "";
             document.getElementById("q_img").innerHTML = "";
+        }
+
+        function checkAnswer(answer) {
+            
+        }
+
+        function changeBackground(column) {
+            let a_color = document.getElementById("ans_A").style.backgroundColor;
+            let b_color = document.getElementById("ans_B").style.backgroundColor;
+            let c_color = document.getElementById("ans_C").style.backgroundColor;
+
+            if (!(column.style.backgroundColor == "rgb(0, 190, 206)")) column.style.backgroundColor = "rgb(0, 190, 206)";
+            else column.style.backgroundColor = "";
+            
+            if (column.id == "ans_A" && (b_color == "rgb(0, 190, 206)" || c_color == "rgb(0, 190, 206)")) {
+                document.getElementById("ans_B").style.backgroundColor = "";
+                document.getElementById("ans_C").style.backgroundColor = "";
+                column.style.backgroundColor = "rgb(0, 190, 206)";
+            }
+            else if (column.id == "ans_B" && (a_color == "rgb(0, 190, 206)" || c_color == "rgb(0, 190, 206)")) {
+                document.getElementById("ans_A").style.backgroundColor = "";
+                document.getElementById("ans_C").style.backgroundColor = "";
+                column.style.backgroundColor = "rgb(0, 190, 206)";
+            }
+            else if (column.id == "ans_C" && (a_color == "rgb(0, 190, 206)" || b_color == "rgb(0, 190, 206)")) {
+                document.getElementById("ans_A").style.backgroundColor = "";
+                document.getElementById("ans_B").style.backgroundColor = "";
+                column.style.backgroundColor = "rgb(0, 190, 206)";
+            }
         }
     </script>
 
@@ -154,7 +184,7 @@
             font-weight: bolder;
         }
         #ans_A, #ans_B, #ans_C {
-            background-color: rgb(255, 255, 255);
+            background-color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
         #ans_A:hover, #ans_B:hover, #ans_C:hover {
@@ -200,7 +230,6 @@
                 padding: 14px 16px;
             }
         }
-        
     </style>
 
     <script type="text/javascript" src="foundation/background-script.js"></script>
