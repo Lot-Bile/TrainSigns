@@ -56,13 +56,14 @@
 
             <tr>
                 <td><input type="button" onclick="getImgAndAnswer()" value="Nová otázka" class="choose-button"></td>
-                <td><input type="button" onclick="checkAnswer(this)" value="Vyhodnotit otázku" class="choose-button"></td>
+                <td><input type="button" onclick="checkAnswer()" value="Vyhodnotit otázku" class="choose-button"></td>
             </tr>
         </table>
 
     </body>
 
     <script>
+        let answer;
         function getImgAndAnswer() {
             let arr = [], letterArr = ["A", "B", "C"];
             clearup();
@@ -82,26 +83,37 @@
                     $(`#ans_B`).append(shuffled[1].description);
                     $(`#ans_C`).append(shuffled[2].description);
 
-                    checkAnswer(shuffled[randomNum - 1].description);
+                    answer = shuffled[randomNum - 1].description;
                 });
             });
         }
 
-        function clearup() {
-            document.getElementById("ans_A").innerHTML = "";
-            document.getElementById("ans_B").innerHTML = "";
-            document.getElementById("ans_C").innerHTML = "";
-            document.getElementById("q_img").innerHTML = "";
-        }
+        function checkAnswer() {
+            let userAnswer;
 
-        function checkAnswer(answer) {
-            
+            if (document.getElementById("ans_A").style.backgroundColor == "rgb(0, 190, 206)") {
+                userAnswer = document.getElementById("ans_A").innerHTML;
+                if (userAnswer == answer) document.getElementById("ans_A").style.backgroundColor = "green";
+                else document.getElementById("ans_A").style.backgroundColor = "red";
+            }
+            else if (document.getElementById("ans_B").style.backgroundColor == "rgb(0, 190, 206)") {
+                userAnswer = document.getElementById("ans_B").innerHTML;
+                if (userAnswer == answer) document.getElementById("ans_B").style.backgroundColor = "green";
+                else document.getElementById("ans_B").style.backgroundColor = "red";
+            }
+            else if (document.getElementById("ans_C").style.backgroundColor == "rgb(0, 190, 206)") {
+                userAnswer = document.getElementById("ans_C").innerHTML;
+                if (userAnswer == answer) document.getElementById("ans_C").style.backgroundColor = "green";
+                else document.getElementById("ans_C").style.backgroundColor = "red";
+            }
         }
 
         function changeBackground(column) {
             let a_color = document.getElementById("ans_A").style.backgroundColor;
             let b_color = document.getElementById("ans_B").style.backgroundColor;
             let c_color = document.getElementById("ans_C").style.backgroundColor;
+
+            if (column.style.backgroundColor == "green" || column.style.backgroundColor == "red") return;
 
             if (!(column.style.backgroundColor == "rgb(0, 190, 206)")) column.style.backgroundColor = "rgb(0, 190, 206)";
             else column.style.backgroundColor = "";
@@ -121,6 +133,16 @@
                 document.getElementById("ans_B").style.backgroundColor = "";
                 column.style.backgroundColor = "rgb(0, 190, 206)";
             }
+        }
+
+        function clearup() {
+            document.getElementById("ans_A").innerHTML = "";
+            document.getElementById("ans_B").innerHTML = "";
+            document.getElementById("ans_C").innerHTML = "";
+            document.getElementById("q_img").innerHTML = "";
+            document.getElementById("ans_A").style.backgroundColor = "";
+            document.getElementById("ans_B").style.backgroundColor = "";
+            document.getElementById("ans_C").style.backgroundColor = "";
         }
     </script>
 
