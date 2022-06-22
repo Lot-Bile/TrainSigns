@@ -114,11 +114,11 @@
             let c_color = document.getElementById("ans_C").style.backgroundColor;
 
             if (column.style.backgroundColor == "green" || column.style.backgroundColor == "red") return;
-
+            if(document.querySelector("*[style=\"background-color: rgb(0, 190, 206);\"]"))document.querySelector("*[style=\"background-color: rgb(0, 190, 206);\"]").style.backgroundColor = ""
             if (!(column.style.backgroundColor == "rgb(0, 190, 206)")) column.style.backgroundColor = "rgb(0, 190, 206)";
             else column.style.backgroundColor = "";
             
-            if (column.id == "ans_A" && (b_color == "rgb(0, 190, 206)" || c_color == "rgb(0, 190, 206)")) {
+            /*if (column.id == "ans_A" && (b_color == "rgb(0, 190, 206)" || c_color == "rgb(0, 190, 206)")) {
                 document.getElementById("ans_B").style.backgroundColor = "";
                 document.getElementById("ans_C").style.backgroundColor = "";
                 column.style.backgroundColor = "rgb(0, 190, 206)";
@@ -132,7 +132,7 @@
                 document.getElementById("ans_A").style.backgroundColor = "";
                 document.getElementById("ans_B").style.backgroundColor = "";
                 column.style.backgroundColor = "rgb(0, 190, 206)";
-            }
+            }*/
         }
 
         function clearup() {
