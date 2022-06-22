@@ -64,26 +64,28 @@
 
     <script>
         let answer;
-        function getImgAndAnswer() {
+        function getImgAndAnswer() { // gets the image and corresponding questions and pushes it into the table
             let arr = [], letterArr = ["A", "B", "C"];
+
             clearup();
-            $(document).ready(function() {
+
+            $(document).ready(function() { // gets objects from JSON on the load of the page
                 $.getJSON('./foundation/signals.json', function(signals) {
                     for (var i = 0; i < signals.length; i++) arr.push(signals[i]);
 
                     let shuffled = arr;
-                    shuffled.sort((a, b) => 0.5 - Math.random());
+                    shuffled.sort((a, b) => 0.5 - Math.random()); // randomizes array
 
                     var image = new Image();
-                    let randomNum = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-                    image.src = `../img/navesti/hlavni/${shuffled[randomNum - 1].name}.gif`;
+                    let randomNum = Math.floor(Math.random() * (3 - 1 + 1)) + 1; // random number between 1 and 3
+                    image.src = `../img/navesti/hlavni/${shuffled[randomNum - 1].name}.gif`; // sets image source
 
-                    $(`#q_img`).append(`<img src="${image.src}">`);
-                    $(`#ans_A`).append(shuffled[0].description);
+                    $(`#q_img`).append(`<img src="${image.src}">`); // sets the image
+                    $(`#ans_A`).append(shuffled[0].description); // sets the 3 first descriptions of the image as questions
                     $(`#ans_B`).append(shuffled[1].description);
                     $(`#ans_C`).append(shuffled[2].description);
 
-                    answer = shuffled[randomNum - 1].description;
+                    answer = shuffled[randomNum - 1].description; // sets the correct answer to the corresponding image
                 });
             });
         }
@@ -91,17 +93,17 @@
         function checkAnswer() {
             let userAnswer;
 
-            if (document.getElementById("ans_A").style.backgroundColor == "rgb(0, 190, 206)") {
-                userAnswer = document.getElementById("ans_A").innerHTML;
+            if (document.getElementById("ans_A").style.backgroundColor == "rgb(0, 190, 206)") { // checks if the answer A is selected, then checks if it is correct, 
+                userAnswer = document.getElementById("ans_A").innerHTML;                        //if it is, then it changes the bgcolor to green, otherwise to red
                 if (userAnswer == answer) document.getElementById("ans_A").style.backgroundColor = "green";
                 else document.getElementById("ans_A").style.backgroundColor = "red";
             }
-            else if (document.getElementById("ans_B").style.backgroundColor == "rgb(0, 190, 206)") {
+            else if (document.getElementById("ans_B").style.backgroundColor == "rgb(0, 190, 206)") { // same as A, but for B
                 userAnswer = document.getElementById("ans_B").innerHTML;
                 if (userAnswer == answer) document.getElementById("ans_B").style.backgroundColor = "green";
                 else document.getElementById("ans_B").style.backgroundColor = "red";
             }
-            else if (document.getElementById("ans_C").style.backgroundColor == "rgb(0, 190, 206)") {
+            else if (document.getElementById("ans_C").style.backgroundColor == "rgb(0, 190, 206)") { // same as A and B, but for C
                 userAnswer = document.getElementById("ans_C").innerHTML;
                 if (userAnswer == answer) document.getElementById("ans_C").style.backgroundColor = "green";
                 else document.getElementById("ans_C").style.backgroundColor = "red";
@@ -109,33 +111,20 @@
         }
 
         function changeBackground(column) {
-            let a_color = document.getElementById("ans_A").style.backgroundColor;
+            let a_color = document.getElementById("ans_A").style.backgroundColor; // gets the current bgcolor of all columns
             let b_color = document.getElementById("ans_B").style.backgroundColor;
             let c_color = document.getElementById("ans_C").style.backgroundColor;
 
-            if (column.style.backgroundColor == "green" || column.style.backgroundColor == "red") return;
-            if(document.querySelector("*[style=\"background-color: rgb(0, 190, 206);\"]"))document.querySelector("*[style=\"background-color: rgb(0, 190, 206);\"]").style.backgroundColor = ""
-            if (!(column.style.backgroundColor == "rgb(0, 190, 206)")) column.style.backgroundColor = "rgb(0, 190, 206)";
-            else column.style.backgroundColor = "";
-            
-            /*if (column.id == "ans_A" && (b_color == "rgb(0, 190, 206)" || c_color == "rgb(0, 190, 206)")) {
-                document.getElementById("ans_B").style.backgroundColor = "";
-                document.getElementById("ans_C").style.backgroundColor = "";
-                column.style.backgroundColor = "rgb(0, 190, 206)";
+            if (column.style.backgroundColor == "green" || column.style.backgroundColor == "red") return; // if the column is already green or red, do nothing
+
+            if(document.querySelector("*[style=\"background-color: rgb(0, 190, 206);\"]")) { // if the clicked column is blue, change it to none
+                document.querySelector("*[style=\"background-color: rgb(0, 190, 206);\"]").style.backgroundColor = "";
             }
-            else if (column.id == "ans_B" && (a_color == "rgb(0, 190, 206)" || c_color == "rgb(0, 190, 206)")) {
-                document.getElementById("ans_A").style.backgroundColor = "";
-                document.getElementById("ans_C").style.backgroundColor = "";
-                column.style.backgroundColor = "rgb(0, 190, 206)";
-            }
-            else if (column.id == "ans_C" && (a_color == "rgb(0, 190, 206)" || b_color == "rgb(0, 190, 206)")) {
-                document.getElementById("ans_A").style.backgroundColor = "";
-                document.getElementById("ans_B").style.backgroundColor = "";
-                column.style.backgroundColor = "rgb(0, 190, 206)";
-            }*/
+
+            if (!(column.style.backgroundColor == "rgb(0, 190, 206)")) column.style.backgroundColor = "rgb(0, 190, 206)"; // if the column isnt blue, change it to blue
         }
 
-        function clearup() {
+        function clearup() { // clears all the columns of questions and answer backgrounds
             document.getElementById("ans_A").innerHTML = "";
             document.getElementById("ans_B").innerHTML = "";
             document.getElementById("ans_C").innerHTML = "";

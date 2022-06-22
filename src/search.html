@@ -122,10 +122,9 @@
     <script type="text/javascript" src="foundation/background-script.js"></script>
 
     <script>
-        function searchSignal() {
-            
-
-            let topThree = document.getElementById("topThreeLights").value;
+        function searchSignal() { // based on user inputs it checks if the signal is valid and shows it, or not
+            // gets all user inputs and saves it into variables
+            let topThree = document.getElementById("topThreeLights").value; 
             let whiteLight = document.getElementById("whiteLight").value;
             let yellowBottomLight = document.getElementById("yellowBottomLight").value;
             let yellowLines = document.getElementById("yellowLine").value;
@@ -133,17 +132,17 @@
 
             let static, flashing, flashingFast, lightColor, yellowLine, greenLineUp, greenLineMid, greenLineBoth, white, whiteFlashing, yellowBot;
 
-            switch (topThree.slice(2)) {
+            switch (topThree.slice(2)) { // checks for the user's choice of the top three lights, slices the first two characters and checks the rest of the string
                 case "on":
                     static = true;
                     flashing = false;
                     flashingFast = false;
 
-                    if (topThree.slice(0, 1) == "y") lightColor = "yellow";
+                    if (topThree.slice(0, 1) == "y") lightColor = "yellow"; // slices the first two characters and checks for the color
                     else if (topThree.slice(0, 1) == "g") lightColor = "green";
                     else if (topThree.slice(0, 1) == "r") lightColor = "red";
                     break;
-                
+                // same as before all over again
                 case "slow":
                     static = false;
                     flashing = true;
@@ -172,7 +171,7 @@
                     break;
             }
 
-            switch (whiteLight) {
+            switch (whiteLight) { // checks for the user's choice of white light
                 case "on":
                     whiteLight = true;
                     whiteFlashing = false;
@@ -189,7 +188,7 @@
                     break;
             }
 
-            switch (yellowBottomLight) {
+            switch (yellowBottomLight) { // checks for the user's choice of yellow bottom light
                 case "on":
                     yellowBot = true;
                     break;
@@ -209,7 +208,7 @@
                     break;
             }
 
-            switch (greenLines) {
+            switch (greenLines) { // checks for the user's choice of green lines
                 case "top_on":
                     greenLineUp = true;
                     greenLineMid = false;
@@ -235,13 +234,13 @@
                     break;
             }
 
-            $(document).ready(function() {
+            $(document).ready(function() { // gets objects from JSON on the load of the page
                 $.getJSON('./foundation/signals.json', function(signals) {
                     for (var i = 0; i < signals.length; i++) {
                         var image = new Image();
-                        image.src = `../img/navesti/hlavni/${signals[i].name}.gif`;
+                        image.src = `../img/navesti/hlavni/${signals[i].name}.gif`; // sets image source
 
-                        if (signals[i].static == static &&
+                        if (signals[i].static == static && // checks if every object's property is equal to the values from user input
                         signals[i].flashing == flashing &&
                         signals[i].flashingFast == flashingFast &&
                         signals[i].lightColor == lightColor &&
@@ -252,14 +251,14 @@
                         signals[i].white == whiteLight &&
                         signals[i].whiteFlashing == whiteFlashing &&
                         signals[i].yellowBot == yellowBot) {
-                            display.innerHTML = "";
+                            display.innerHTML = ""; // resets the display div before adding the new image
                             return (
                             $('#display').append(`<img src="${image.src}"><br>`),
                             $('#display').append(`${signals[i].description}<br>`)
                             )
                         }
 
-                        else if (display.innerHTML == "") {
+                        else if (display.innerHTML == "") { // returns that the signal based on user input was not found
                             $('#display').append(`Návěstidlo nebylo nalezeno.`);
                         }
                     }
